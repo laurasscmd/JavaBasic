@@ -39,28 +39,64 @@ public class Operators {
     }
 
 
-    public static void triangle(){
+    public static String  triangle(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter triangle sides");
-        int side1 = scanner.nextInt();
-        int side2 = scanner.nextInt();
-        int side3 = scanner.nextInt();
+        int sideOne = scanner.nextInt();
+        int sideTwo = scanner.nextInt();
+        int sideThree = scanner.nextInt();
+        String result;
+
+        if ((sideOne + sideTwo > sideThree) && (sideOne + sideThree > sideTwo) && (sideThree + sideTwo > sideOne)) {
+
+            //System.out.println("Triangle possible");
+            if ((sideOne == sideTwo) || (sideTwo == sideThree) || (sideOne == sideThree)) {
+                result= "Triangle is Isosceles. Sides: " + sideOne + " " + sideTwo + " " + sideThree;
+                System.out.println(result);
+            }
+            if ((sideOne == sideTwo) && (sideTwo == sideThree)) {
+                result= "Triangle is Equilateral. Sides: " + sideOne + " " + sideTwo + " " + sideThree;
+                System.out.println(result);
+
+            } else {
+                result="Triangle is Scalene. Sides: " + sideOne + " " + sideTwo + " " + sideThree;
+                System.out.println(result);
+            }
+        }
+        else {
+            result="Triangle not possible. Sides: "+sideOne+" "+sideTwo+" " +sideThree +"";
+            System.out.println(result);
+        }
+
+        return result;
+    }
+
+    public static String  trianglecheck(int side1, int side2, int side3){
+
+
+        String result;
 
         if ((side1 + side2 > side3) && (side1 + side3 > side2) && (side3 + side2 > side1)) {
 
             //System.out.println("Triangle possible");
             if ((side1 == side2) || (side2 == side3) || (side1 == side3)) {
-                System.out.println("Triangle is Isosceles. Sides: " + side1 + " " + side2 + " " + side3);
+                result= "Triangle is Isosceles. Sides: " + side1 + " " + side2 + " " + side3;
+                System.out.println(result);
             }
             if ((side1 == side2) && (side2 == side3)) {
-                System.out.println("Triangle is Equilateral. Sides: " + side1 + " " + side2 + " " + side3);
+                result= "Triangle is Equilateral. Sides: " + side1 + " " + side2 + " " + side3;
+                System.out.println(result);
+
             } else {
-                System.out.println("Triangle is Scalene. Sides: " + side1 + " " + side2 + " " + side3);
+                result="Triangle is Scalene. Sides: " + side1 + " " + side2 + " " + side3;
+                System.out.println(result);
             }
         }
         else {
-            System.out.println("Triangle not possible. Sides: "+side1+" "+side2+" " +side3 +"");
+            result="Triangle not possible. Sides: "+side1+" "+side2+" " +side3 +"";
+            System.out.println(result);
         }
 
+        return result;
     }
 }
